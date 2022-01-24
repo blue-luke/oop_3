@@ -3,9 +3,10 @@ require "todo_list"
 describe "TodoList features" do
   it "can create a todo" do
     list = TodoList.new
-    todo_double = double("Todo")
+    todo_double = double("Todo", :new => true)
     list.add("say hi", todo_double)
-    expect(list.to_string).to eq("1. say hi not complete")
+
+    expect(todo_double).to have_received(:new).with("say hi")
   end
 
   it "can complete a todo" do
