@@ -13,6 +13,10 @@ class TodoList
     all[index]
   end
 
+  def set_complete(index)
+    get(index)[:complete] = true
+  end
+
   private
 
   def all

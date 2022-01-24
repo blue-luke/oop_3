@@ -3,7 +3,8 @@ require "todo_list"
 describe "TodoList features" do
   it "can create a todo" do
     list = TodoList.new
-    list.add("say hi")
+    todo_double = double("Todo")
+    list.add("say hi", todo_double)
     expect(list.to_string).to eq("1. say hi not complete")
   end
 
